@@ -14,6 +14,19 @@ let crypt = (text) => {
     return newText;
 }
 
+let decrypt = (text) => {
+    let newText = "";
+    for (let i = 0; i < text.length; i++) {
+        let letter = text[i];
+        if (toDecrypt.includes(letter)) {
+            newText += toCrypt[toDecrypt.indexOf(letter)];
+        } else {
+            newText += letter;
+        }
+    }
+    return newText;
+}
+
 const cryptText = () => {
     let text = document.getElementById("input-text").value;
     let result = crypt(text);
@@ -22,10 +35,7 @@ const cryptText = () => {
 
 const decryptText = () => {
     let text = document.getElementById("input-text".value);
-    let result = "";
-    for (let i = 0; i < text.length; i++) {
-        result += String.fromCharCode(text.charCodeAt(i) - 1);
-    }
+    let result = decrypt(text);
     document.getElementById("output-text").value = result;
 }
 
