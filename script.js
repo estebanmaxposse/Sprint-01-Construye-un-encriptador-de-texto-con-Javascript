@@ -1,42 +1,29 @@
 const toCrypt = ["a", "e", "i", "o", "u"];
 const toDecrypt = ["ai", "enter", "imes", "ober", "ufat"];
+const inputField = document.getElementById("input-text");
+const outputField = document.getElementById("output-text");
 
-let crypt = (text) => {
-    let newText = "";
-    for (let i = 0; i < text.length; i++) {
-        let letter = text[i];
-        if (toCrypt.includes(letter)) {
-            newText += toDecrypt[toCrypt.indexOf(letter)];
-        } else {
-            newText += letter;
+let crypt = (text, reverse=false) => {
+    const regex = new RegExp((reverse ? toDecrypt : toCrypt).join("|"), "gi");
+    return text.replace(regex, match => {
+        const index = (reverse ? toDecrypt : toCrypt).indexOf(match.toLowerCase());
+        console.log(index);
+        if (index !== -1) {
+            return (reverse ? toCrypt : toDecrypt)[index];
         }
-    }
-    return newText;
-}
-
-let decrypt = (text) => {
-    let newText = "";
-    for (let i = 0; i < text.length; i++) {
-        let letter = text[i];
-        if (toDecrypt.includes(letter)) {
-            newText += toCrypt[toDecrypt.indexOf(letter)];
-        } else {
-            newText += letter;
-        }
-    }
-    return newText;
+        console.log(match);
+        return match;
+    });
 }
 
 const cryptText = () => {
-    let text = document.getElementById("input-text").value;
-    let result = crypt(text);
-    document.getElementById("output-text").value = result;
+    let result = crypt(inputField.value);
+    outputField.value = result;
 }
 
 const decryptText = () => {
-    let text = document.getElementById("input-text".value);
-    let result = decrypt(text);
-    document.getElementById("output-text").value = result;
+    let result = crypt(inputField.value, true);
+    outputField.value = result;
 }
 
 document.getElementById("crypt").addEventListener("click", cryptText);
