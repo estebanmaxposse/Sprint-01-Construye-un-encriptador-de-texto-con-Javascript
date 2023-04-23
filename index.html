@@ -1,16 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- título, keywords y descripción -->
+    <!-- title, keywords & description -->
     <title>Text crypter - by Esteban Maxilimiano Posse</title>
     <meta name="description" content="JS text crypter">
-    <meta name="keywords"
-        content="JavaScript, Crypter">
+    <meta name="keywords" content="JavaScript, Crypter">
     <meta name="author" content="Esteban Maximiliano Posse">
 
-    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://i.imgur.com/XCOypIa.png">
+
+    <!-- Packages -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<head/>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="https://i.imgur.com/XCOypIa.png" alt="Quote" width="24" height="24">
+                Text Crypter
+            </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="https://github.com/estebanmaxposse" target="_blank">GitHub Repo</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://estebanmaxposse.github.io/Portfolio_Website.-POSSE_Esteban_Maximiliano/" target="_blank">More by Esteban</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 m-2">
+                <h1>Text crypter</h1>
+                <p>by Esteban Maximiliano Posse</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="mb-3">
+                    <label for="input-text" class="form-label">Write here the text you wanna encrypt!</label>
+                    <textarea class="form-control" id="input-text" rows="3"></textarea>
+                </div>
+                <div class="buttons m-2">
+                    <button id="crypt" class="btn btn-primary">Crypt</button>
+                    <button id="decrypt" class="btn btn-primary">Decrypt</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="mb-3">
+                    <label for="output-text" class="form-label">Decrypt text!</label>
+                    <textarea class="form-control" id="output-text" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+    <!-- <script>
+        const crypt = () => {
+            let text = document.getElementById("input-text").value;
+            let result = "";
+            for (let i = 0; i < text.length; i++) {
+                result += String.fromCharCode(text.charCodeAt(i) + 1);
+            }
+            document.getElementById("output-text").value = result;
+        }
+
+        const decrypt = () => {
+            let text = document.getElementById("input-text".value;
+            let result = "";
+            for (let i = 0; i < text.length; i++) {
+                result += String.fromCharCode(text.charCodeAt(i) - 1);
+            }
+            document.getElementById("output-text").value = result;
+        }
+
+        document.getElementById("crypt").addEventListener("click", crypt);
+        document.getElementById("decrypt").addEventListener("click", decrypt);
+    </> -->
+
+</body>
+
 </html>
