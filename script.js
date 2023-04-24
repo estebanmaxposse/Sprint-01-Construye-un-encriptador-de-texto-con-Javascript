@@ -43,3 +43,41 @@ copyButton.addEventListener("click", () => {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
     toastBootstrap.show()
 });
+
+// DARK/LIGHT MODE
+const toggleDarkMode = document.getElementById("toggle-dark-mode");
+const toggleIcon = document.getElementById("toggle-icon");
+
+function setDarkMode() {
+    document.documentElement.setAttribute("data-bs-theme", "dark");
+    console.log('dark');
+    localStorage.setItem("theme", "dark");
+    toggleDarkMode.checked = true;
+    toggleIcon.className = "fa-solid fa-sun"
+}
+
+function setLightMode() {
+    document.documentElement.setAttribute("data-bs-theme", "light");
+    console.log('light');
+    localStorage.setItem("theme", "light");
+    toggleDarkMode.checked = false;
+    toggleIcon.className = "fa-regular fa-moon"
+}
+
+toggleDarkMode.addEventListener("change", () => {
+    if (toggleDarkMode.checked) {
+        console.log('set dark mode');
+        setDarkMode();
+    } else {
+        console.log('set light mode');
+        setLightMode();
+    }
+});
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme === "dark") {
+    console.log('dark mode');
+    setDarkMode();
+} else {
+    setLightMode();
+}
