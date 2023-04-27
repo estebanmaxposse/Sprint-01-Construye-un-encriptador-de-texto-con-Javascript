@@ -1,6 +1,6 @@
 # JS Text Crypter
 
-JS Text Crypter is a simple web application that allows you to encrypt and decrypt text. It is built using JavaScript, HTML, CSS, Sass, and Bootstrap.
+JS Text Crypter is a simple web application that allows you to encrypt and decrypt text. It is built using JavaScript, HTML, CSS, and Bootstrap.
 
 ## Features
 
