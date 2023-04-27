@@ -47,36 +47,39 @@ copyButton.addEventListener("click", () => {
 // DARK/LIGHT MODE
 const toggleDarkMode = document.getElementById("toggle-dark-mode");
 const toggleIcon = document.getElementById("toggle-icon");
+const mainButtons = document.querySelectorAll(".btn-glitch");
 
 function setDarkMode() {
     document.documentElement.setAttribute("data-bs-theme", "dark");
-    console.log('dark');
     localStorage.setItem("theme", "dark");
     toggleDarkMode.checked = true;
     toggleIcon.className = "fa-solid fa-sun"
+    for (let i = 0; i < mainButtons.length; i++) {
+        mainButtons[i].style.background = "none";
+    }
 }
 
 function setLightMode() {
     document.documentElement.setAttribute("data-bs-theme", "light");
-    console.log('light');
     localStorage.setItem("theme", "light");
     toggleDarkMode.checked = false;
     toggleIcon.className = "fa-regular fa-moon"
+    for (let i = 0; i < mainButtons.length; i++) {
+        mainButtons[i].style.background = "#212529";
+        mainButtons[i].style.color = "white";
+    }
 }
 
 toggleDarkMode.addEventListener("change", () => {
     if (toggleDarkMode.checked) {
-        console.log('set dark mode');
         setDarkMode();
     } else {
-        console.log('set light mode');
         setLightMode();
     }
 });
 
 const currentTheme = localStorage.getItem("theme");
 if (currentTheme === "dark") {
-    console.log('dark mode');
     setDarkMode();
 } else {
     setLightMode();
