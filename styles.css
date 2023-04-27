@@ -160,8 +160,12 @@ h1 {
     box-shadow: -1px 0 #fff;
 }
 #bs-override .btn-glitch:hover {
-    background: white;
-    color: black;
+    background: none;
+    color: white;
+}
+#bs-override .btn-glitch-light:hover {
+    background: black;
+    color: white;
 }
 #bs-override .btn-glitch:hover:before {
     animation: glitch-test 1.5s infinite linear alternate-reverse;
@@ -227,12 +231,32 @@ h1 {
    }
 }
 
-#copy-button {
-    background: white;
-    color: #495057;
-    border-color: #495057;
+#bs-override .copy-button {
+    background: #adb5bd;
+    color: #212529;
+    border-color: #212529;
 }
 
-#copy-button:hover {
+#bs-override .copy-button:hover {
     filter: invert(1);
+}
+
+#bs-override .copy-button-light {
+    background: #212529;
+    color: #adb5bd;
+    border-color: #adb5bd;
+}
+
+#bs-override .copy-button-light:hover {
+    filter: invert(1);
+}
+
+#input-area, #output-area {
+    height: 75%;
+}
+
+@media screen and (max-width: 992px) {
+    #input-area, #output-area {
+        height: auto;
+    }
 }

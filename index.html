@@ -59,10 +59,10 @@
                                 target="_blank">More by Esteban</a>
                         </li>
                     </ul>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="toggle-dark-mode">
-                    <i class="fa-regular fa-moon" id="toggle-icon"></i>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="toggle-dark-mode">
+                        <i class="fa-regular fa-moon" id="toggle-icon"></i>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -80,9 +80,9 @@
                 </div>
             </div>
         </div>
-        <div class="row flex-grow-1">
-            <div class="col-lg-8">
-                <div class="mb-3 h-75">
+        <div class="row flex-lg-grow-1 text-area">
+            <div class="col-lg-8 input-area-container">
+                <div class="mb-3" id="input-area">
                     <label for="input-text" class="form-label">Write here the text you wanna encrypt!</label>
                     <textarea class="form-control" id="input-text" rows="3"></textarea>
                 </div>
@@ -92,10 +92,10 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="mb-3 position-relative h-75">
+                <div class="mb-3 position-relative" id="output-area">
                     <label for="output-text" class="form-label">Decrypt text!</label>
                     <textarea class="form-control" id="output-text" rows="3" readonly></textarea>
-                    <button id="copy-button" class="btn btn-primary position-absolute top-0 end-0 mt-2 me-2"
+                    <button id="copy-button" class="btn btn-primary position-absolute top-0 end-0 mt-2 me-2 copy-button"
                         data-bs-content="Copied to clipboard!">
                         <i class="fa-regular fa-copy"></i>
                     </button>

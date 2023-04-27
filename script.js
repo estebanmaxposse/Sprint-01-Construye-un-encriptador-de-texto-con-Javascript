@@ -57,6 +57,7 @@ function setDarkMode() {
     for (let i = 0; i < mainButtons.length; i++) {
         mainButtons[i].style.background = "none";
     }
+    copyButton.classList.remove("copy-button-light");
 }
 
 function setLightMode() {
@@ -67,7 +68,10 @@ function setLightMode() {
     for (let i = 0; i < mainButtons.length; i++) {
         mainButtons[i].style.background = "#212529";
         mainButtons[i].style.color = "white";
+        mainButtons[i].classList.toggle("btn-glitch-light");
     }
+    copyButton.classList.toggle("copy-button-light");
+    console.log(copyButton.classList);
 }
 
 toggleDarkMode.addEventListener("change", () => {
